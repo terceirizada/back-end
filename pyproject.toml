@@ -1,0 +1,66 @@
+[project]
+name = "xp-backend"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "guilherme", email = "vinespedro55@gmail.com"},
+]
+dependencies = [
+    "django>=5.1",
+    "djangorestframework>=3.15.2",
+    "email-validator>=2.2.0",
+    "pytest>=8.3.2",
+    "ruff>=0.6.1",
+    "pytest-cov>=5.0.0",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+python_files = ["test_*.py", "*_test.py", "tests.py", "test.py"]
+
+[tool.ruff]
+src = ["src"]
+line-length = 88
+
+exclude = ["*/migrations/*"]
+
+select = [
+    "F",   # Pyflakes
+    "E",   # pycodestyle - Errors
+    "W",   # pycodestyle - Warnings
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "YTT", # flake8-2020
+    "S",   # flake8-bandit
+    "COM", # flake8-commas
+    "C4",  # flake8-comprehensions
+    "DTZ", # flake8-datetimez
+    "EM",  # flake8-errmsg
+    "EXE", # flake8-executable
+    "FA",  # flake8-future-annotations
+    "ISC", # flake8-implicit-str-concat
+    "ICN", # flake8-import-conventions
+    "G",   # flake8-logging-format
+    "INP", # flake8-no-pep420
+    "PIE", # flake8-pie
+    "T20", # flake8-print
+    "PYI", # flake8-pyi
+    "Q",   # flake8-quotes
+    "RSE", # flake8-raise
+    "RET", # flake8-return
+    "SIM", # flake8-simplify
+    "INT", # flake8-gettext
+    "PL",  # Pylint
+]
+
+ignore = ["S107", "S106", "E501", "S311", "EXE002", "EM101" , "S101"]
+target-version = "py311"
+
