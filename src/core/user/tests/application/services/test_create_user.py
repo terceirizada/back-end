@@ -33,7 +33,7 @@ class TestCreateUser:
         self,
         repository: InMemoryUserRepository,
     ):
-        request = InputCreateUser(email="test@hotmail.com", password="12345678")
+        request = InputCreateUser(email="teste@hotmail.com", password="12345678")
         service = CreateUser(repository)
         service.execute(input=request)
 
