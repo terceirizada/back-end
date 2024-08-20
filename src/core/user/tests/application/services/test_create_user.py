@@ -7,6 +7,8 @@ from src.core.user.domain.exceptions.user_exceptions import (
 )
 from src.core.user.infra.in_memory_user import InMemoryUserRepository
 
+STATUS_CONFLICT = 409
+
 
 @pytest.fixture
 def repository():
@@ -41,3 +43,4 @@ class TestCreateUser:
             service.execute(input=request)
 
         assert str(excinfo.value) == "User already exists"
+        assert excinfo.value.status_code == STATUS_CONFLICT
