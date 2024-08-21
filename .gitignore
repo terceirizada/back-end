@@ -131,6 +131,7 @@ env.bak/
 venv.bak/
 
 static/
+/static/*
 
 
 # Spyder project settings
