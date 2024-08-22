@@ -13,6 +13,9 @@ dependencies = [
     "ruff>=0.6.1",
     "pytest-cov>=5.0.0",
     "pytest-django>=4.8.0",
+    "python-dotenv>=1.0.1",
+    "pre-commit>=3.8.0",
+    "psycopg2-binary>=2.9.9",
 ]
 requires-python = "==3.11.*"
 readme = "README.md"
@@ -61,4 +64,3 @@ select = [
 
 ignore = ["S107", "S106", "E501", "S311", "EXE002", "EM101" , "S101"]
 target-version = "py311"
-
