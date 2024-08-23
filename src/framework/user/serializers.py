@@ -8,4 +8,4 @@ class InputCreateUserSerializer(serializers.Serializer):
 
 class OutputCreateUserSerializer(serializers.Serializer):
     email = serializers.EmailField()
-    id = serializers.IntegerField()
+    id = serializers.UUIDField()
