@@ -1,6 +1,6 @@
 import pytest
+from src.core.user.application.dto.user_dto import InputCreateUser
 from src.core.user.application.service.create_user import CreateUser
-from src.core.user.domain.dto.user_dto import InputCreateUser
 from src.core.user.domain.exceptions.user_exceptions import (
     InvalidUserError,
     UserAlreadyExistError,

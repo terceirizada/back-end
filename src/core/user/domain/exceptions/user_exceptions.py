@@ -29,3 +29,9 @@ class InvalidUserError(Error):
     def __init__(self):
         self.msg = "Invalid user"
         self.status_code = 422
+
+
+class UserNotFoundError(Error):
+    def __init__(self):
+        self.msg = "User not found"
+        self.status_code = 404
