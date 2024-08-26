@@ -14,7 +14,7 @@ def create_jwt(payload: dict[str], expires_in: int) -> dict:
     return jwt.encode(
         payload=payload,
         key=os.getenv("SECRET_KEY"),
-        algorithm=os.getenv("ALGORITHM", "HS256"),
+        algorithm=os.getenv("ALGORITHM"),
     )
 
 
@@ -23,7 +23,7 @@ def decode_jwt(token: str) -> dict:
     decoded = jwt.decode(
         jwt=token,
         key=os.getenv("SECRET_KEY"),
-        algorithms=[os.getenv("ALGORITHM", "HS256")],
+        algorithms=[os.getenv("ALGORITHM")],
     )
 
     current_time = datetime.now(tz=timezone)
