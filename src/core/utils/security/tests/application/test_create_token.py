@@ -1,3 +1,5 @@
+import warnings
+
 import pytest
 from src.core.user.domain.entity import User
 from src.core.user.infra.in_memory_user import InMemoryUserRepository
@@ -8,6 +10,8 @@ from src.core.utils.security.jwt import decode_jwt
 
 STATUS_CONFLICT = 409
 EXP = 60
+
+warnings.filterwarnings("ignore", category=DeprecationWarning, module="passlib.utils")
 
 
 @pytest.fixture
