@@ -22,8 +22,6 @@ class DjangoORMUserRepository(UserRepository):
             id=user_model.id,
         )
 
-        return None
-
     def get_by_email(self, email: str) -> User:
         try:
             user = self.user_model.objects.get(email=email)
