@@ -10,6 +10,7 @@ from src.framework.user.repository import DjangoORMUserRepository
 STATUS_OK = 200
 STATUS_ALREADY_EXISTS = 409
 STATUS_CREATED = 201
+STATUS_USER_NOT_FOUND = 404
 
 
 @pytest.fixture
@@ -43,3 +44,18 @@ class TestCreateAuthUserView:
             "token": response.json()["token"],
             "exp": response.json()["exp"],
         }
+
+    def teste_login_user_not_found(self, client: APIClient):
+        data = {
+            "email": "test@hotmail.com",
+            "password": "12345678",
+        }
+
+        response = client.post(
+            "/api/auth/",
+            data=json.dumps(data),
+            content_type="application/json",
+        )
+
+        assert response.json() == {"error": "User not found"}
+        assert response.status_code == STATUS_USER_NOT_FOUND
