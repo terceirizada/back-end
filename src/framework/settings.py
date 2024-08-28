@@ -91,7 +91,7 @@ DATABASES = (
             "NAME": BASE_DIR / "db.sqlite3",
         },
     }
-    if DEBUG is True
+    if DEBUG == "True"
     else {
         "default": {
             "ENGINE": "django.db.backends.postgresql",

@@ -13,7 +13,6 @@ jobs:
         os: [ubuntu-22.04]
     runs-on: ${{ matrix.os }}
     env:
-      DEBUG: ${{ vars.DEBUG }}
       ALGORITHM: ${{vars.ALGORITHM}}
       SECRET_KEY: ${{vars.SECRET_KEY}}
 
