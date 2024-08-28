@@ -1,7 +1,7 @@
 import pytest
 from src.core.user.domain.entity import User
 from src.framework.user.models import User as UserModel
-from src.framework.user.repository import DjangoORMUserRepository
+from src.framework.user.repository.repository import DjangoORMUserRepository
 
 
 @pytest.mark.django_db

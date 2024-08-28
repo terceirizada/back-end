@@ -2,6 +2,7 @@
 # Please do not edit it manually.
 
 asgiref==3.8.1
+bcrypt==4.2.0
 cfgv==3.4.0
 colorama==0.4.6; sys_platform == "win32"
 coverage==7.6.1

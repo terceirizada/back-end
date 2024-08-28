@@ -11,7 +11,7 @@ class TestUnitClassUser:
         password_ = "12345678"  # noqa
         user = User(email="test@hotmail.com", password=password_)
         assert user.email == "test@hotmail.com"
-        assert user.password == password_
+        assert user.password != password_
 
     def test_user_instance_with_id(self):
         user = User(email="test@hotmail.com", password="12345678")

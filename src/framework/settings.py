@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "src.framework.user",
+    "src.framework.process",
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "src.framework.urls"
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+]
 
 TEMPLATES = [
     {
