@@ -5,7 +5,7 @@ from rest_framework.viewsets import ViewSet
 from src.core.user.application.dto.user_dto import InputCreateUser
 from src.core.user.application.service.create_user import CreateUser
 from src.framework.user.models import User as UserModel
-from src.framework.user.repository import DjangoORMUserRepository
+from src.framework.user.repository.repository import DjangoORMUserRepository
 from src.framework.user.serializers import (
     InputCreateUserSerializer,
     OutputCreateUserSerializer,

@@ -6,7 +6,7 @@ from src.core.utils.security.application.dto.jwt import InputAuthUserDto
 from src.core.utils.security.application.service.auth_jwt import JWTCreator
 from src.framework.auth.serializers import InputAuthUserSerializer, JWTSerializer
 from src.framework.user.models import User as UserModel
-from src.framework.user.repository import DjangoORMUserRepository
+from src.framework.user.repository.repository import DjangoORMUserRepository
 
 
 class AuthViewSet(ViewSet):

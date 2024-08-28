@@ -5,7 +5,7 @@ from rest_framework.test import APIClient
 
 from src.core.user.domain.entity import User
 from src.framework.user.models import User as UserModel
-from src.framework.user.repository import DjangoORMUserRepository
+from src.framework.user.repository.repository import DjangoORMUserRepository
 
 STATUS_OK = 200
 STATUS_ALREADY_EXISTS = 409
@@ -39,11 +39,11 @@ class TestCreateAuthUserView:
             content_type="application/json",
         )
 
-        assert response.status_code == STATUS_OK
         assert response.json() == {
             "token": response.json()["token"],
             "exp": response.json()["exp"],
         }
+        assert response.status_code == STATUS_OK
 
     def teste_login_user_not_found(self, client: APIClient):
         data = {
