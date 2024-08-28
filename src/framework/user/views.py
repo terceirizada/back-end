@@ -2,10 +2,10 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
 
+from src.core.user.application.dto.user_dto import InputCreateUser
 from src.core.user.application.service.create_user import CreateUser
-from src.core.user.domain.dto.user_dto import InputCreateUser
 from src.framework.user.models import User as UserModel
-from src.framework.user.repository import DjangoORMUserRepository
+from src.framework.user.repository.repository import DjangoORMUserRepository
 from src.framework.user.serializers import (
     InputCreateUserSerializer,
     OutputCreateUserSerializer,
@@ -30,4 +30,4 @@ class UserViewSet(ViewSet):
 
             return Response(data=output.data, status=201)
         except Exception as e:
-            return Response({"error": e.value}, status=e.value.status_code)
+            return Response({"error": e.msg}, status=e.status_code)

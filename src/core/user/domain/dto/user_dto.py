@@ -2,12 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class InputCreateUser:
+class UserOutPut:
     email: str
     password: str
-
-
-@dataclass
-class OutputCreateUser:
-    email: str
     id: str

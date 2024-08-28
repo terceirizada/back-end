@@ -12,6 +12,10 @@ jobs:
         poetry-version: ["1.7.1"]
         os: [ubuntu-22.04]
     runs-on: ${{ matrix.os }}
+    env:
+      DEBUG: ${{ vars.DEBUG }}
+      ALGORITHM: ${{vars.ALGORITHM}}
+      SECRET_KEY: ${{vars.SECRET_KEY}}
 
     steps:
       - uses: actions/checkout@v4
@@ -26,6 +30,8 @@ jobs:
 
       - name: Set PYTHONPATH
         run: echo PYTHONPATH=$PYTHONPATH:$(pwd)/src >> $GITHUB_ENV
+        env:
+          DEBUG: ${{secrets.DEBUG}}
 
       - name: Run Pytest
         run: pdm run pytest ./src

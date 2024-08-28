@@ -1,4 +1,4 @@
-from src.core.user.domain.dto.user_dto import InputCreateUser, OutputCreateUser
+from src.core.user.application.dto.user_dto import InputCreateUser, OutputCreateUser
 from src.core.user.domain.entity import User
 from src.core.user.domain.exceptions.user_exceptions import UserAlreadyExistError
 from src.core.user.domain.repository.user_repository import UserRepository
