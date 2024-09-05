@@ -27,7 +27,7 @@ load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-#&")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "True")
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = ["back-end-nu-blond.vercel.app"]
 
@@ -111,7 +111,7 @@ DATABASES = (
             "NAME": BASE_DIR / "db.sqlite3",
         },
     }
-    if DEBUG == "True"
+    if DEBUG
     else {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
